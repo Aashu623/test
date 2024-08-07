@@ -17,8 +17,6 @@ function App() {
     myForm.set("age", age);
     myForm.set("gender", gender);
     myForm.set("phone", phone);
-
-    console.log(...myForm); // To display form data
   };
 
   return (
