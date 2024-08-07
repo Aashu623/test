@@ -14,15 +14,7 @@ function Product() {
 
   return (
     <>
-      <div className="container my-10 w-1/6 mx-auto border-2 border-black rounded-xl p-6 flex flex-col justify-center items-center gap-10">
-        {list &&
-          list.map((item) => {
-            <span className="text-5xl text-blue-900 inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-black ring-1 ring-inset ring-gray-500/10">
-              {item.title}
-            </span>;
-          })}
-      </div>
-      <div className="container grid grid-cols-5 gap-5">
+      <div className="container grid grid-cols-5 gap-5 p-10">
         {products.map((product) => (
           <div key={product.id} className="group relative">
             <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
