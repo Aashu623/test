@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Disclosure,
   DisclosureButton,
@@ -23,7 +24,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navbar() {
+const Navbar = () => {
   const navigate = useNavigate();
 
   const { user, setUser } = useContext(AppContext);
@@ -156,4 +157,6 @@ export default function Navbar() {
       </DisclosurePanel>
     </Disclosure>
   );
-}
+};
+
+export default React.memo(Navbar);
