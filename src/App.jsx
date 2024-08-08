@@ -1,85 +1,24 @@
+import { useEffect } from "react";
 import "./App.css";
-import { useState } from "react";
+import Product from "./components/Product";
+import Cart from "./components/Cart";
+import { useDispatch } from "react-redux";
+
+import { getAllProducts } from "./actions/productAction";
 
 function App() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [age, setAge] = useState("");
-  const [gender, setGender] = useState("");
-  const [phone, setPhone] = useState("");
+  const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const myForm = new FormData();
-    myForm.set("firstName", firstName);
-    myForm.set("lastName", lastName);
-    myForm.set("age", age);
-    myForm.set("gender", gender);
-    myForm.set("phone", phone);
-
-    console.log(...myForm); // To display form data
-  };
-
+  useEffect(() => {
+    dispatch(getAllProducts());
+  }, [dispatch]);
   return (
-    <div>
-      <h1>User Details Form</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>First Name</label>
-          <input
-            type="text"
-            name="firstName"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Age</label>
-          <input
-            type="text"
-            name="age"
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Male</label>
-          <input
-            type="radio"
-            name="gender"
-            value="Male"
-            onChange={(e) => setGender(e.target.value)}
-          />
-          <label>Female</label>
-          <input
-            type="radio"
-            name="gender"
-            value="Female"
-            onChange={(e) => setGender(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Phone</label>
-          <input
-            type="text"
-            name="phone"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-        </div>
-        <input type="submit" />
-      </form>
-    </div>
+    <>
+      <div className="container flex">
+        <Product />
+        <Cart />
+      </div>
+    </>
   );
 }
 
