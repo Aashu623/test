@@ -1,84 +1,38 @@
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
-import { useState } from "react";
 
 function App() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [age, setAge] = useState("");
-  const [gender, setGender] = useState("");
-  const [phone, setPhone] = useState("");
+  const btn = useRef();
+  const [count, setCount] = useState(0);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    const handleClick = () => {
+      setCount((count) => count + 1);
+    };
 
-    const myForm = new FormData();
-    myForm.set("firstName", firstName);
-    myForm.set("lastName", lastName);
-    myForm.set("age", age);
-    myForm.set("gender", gender);
-    myForm.set("phone", phone);
+    const buttonElement = btn.current;
 
-    console.log(...myForm); // To display form data
-  };
+    if (buttonElement) {
+      buttonElement.addEventListener("click", handleClick);
+    }
 
+    return () => {
+      if (buttonElement) {
+        buttonElement.removeEventListener("click", handleClick);
+      }
+    };
+  });
   return (
-    <div>
-      <h1>User Details Form</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>First Name</label>
-          <input
-            type="text"
-            name="firstName"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Age</label>
-          <input
-            type="text"
-            name="age"
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Male</label>
-          <input
-            type="radio"
-            name="gender"
-            value="Male"
-            onChange={(e) => setGender(e.target.value)}
-          />
-          <label>Female</label>
-          <input
-            type="radio"
-            name="gender"
-            value="Female"
-            onChange={(e) => setGender(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Phone</label>
-          <input
-            type="text"
-            name="phone"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-        </div>
-        <input type="submit" />
-      </form>
+    <div className="flex w-screen h-screen">
+      <div className="container flex flex-col w-2/6 bg-red-100 p-10 gap-5 items-center self-center">
+        <span className="text-2xl">Button click count: {count}</span>
+        <button
+          className="text-2xl border p-2 border-black  rounded-sm"
+          ref={btn}
+        >
+          Click me
+        </button>
+      </div>
     </div>
   );
 }
