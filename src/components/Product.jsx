@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProducts } from "../actions/r/productAction";
 
 function Product() {
-  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
 
+  const { products } = useSelector((state) => state.products);
   useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("https://dummyjson.com/products");
-      const data = await response.json();
-      setProducts(data.products);
-    }
-    fetchData();
-  });
-
+    dispatch(getAllProducts());
+  }, [ dispatch]);
   return (
     <>
       <div className="container grid grid-cols-5 gap-5 p-10">
