@@ -10,9 +10,9 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
-function Header() {
+function Footer() {
   const navigation = [
-    { name: "Dashboard", href: "/", current: true },
+    { name: "Dashboard", href: "/home", current: true },
     { name: "About", href: "/about", current: false },
     { name: "Contact", href: "/contact", current: false },
   ];
@@ -149,4 +149,4 @@ function Header() {
   );
 }
 
-export default React.memo(Header);
+export default React.memo(Footer);
