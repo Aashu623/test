@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect } from "react";
 import { useGetProductsQuery } from "../api/products";
 import ProductCard from "./ProductCard";
-import CreateProduct from "./CreateProduct.jsx";
 function Products() {
   const { data: products, error } = useGetProductsQuery();
 
@@ -20,7 +19,7 @@ function Products() {
           ))}
       </div>
 
-      <CreateProduct />
+      
     </>
   );
 }

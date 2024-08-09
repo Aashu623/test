@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "title": "shoes",
       "color": "White",
       "price": "50",
@@ -11,17 +11,7 @@
       "imageAlt": "White Sneakers"
     },
     {
-      "id": 2,
-      "title": "Realme",
-      "price": "10000",
-      "color": "black",
-      "images": [
-        "fangahf"
-      ],
-      "imageAlt": "Realme"
-    },
-    {
-      "id": 3,
+      "id": "3",
       "title": "Realme",
       "price": "20000",
       "color": "black",
@@ -31,8 +21,8 @@
       "imageAlt": "Realme"
     },
     {
-      "id": 4,
-      "title": "reale",
+      "id": "4",
+      "title": "Narzo 30C",
       "price": "15000",
       "color": "red",
       "images": [
@@ -41,24 +31,24 @@
       "imageAlt": "reale"
     },
     {
-      "id": 5,
-      "title": "jfajdn",
-      "price": "nkdn",
-      "color": "ndjvnl",
+      "id": "61",
+      "title": "Boat Nirvana ION",
+      "price": "1500",
+      "color": "Black",
       "images": [
-        "nkdndak"
+        "https://www.luluhypermarket.in/medias/1200Wx1200H-null?context=bWFzdGVyfGltYWdlc3w5NDk0M3xpbWFnZS9qcGVnfGFHVTBMMmhqTkM4NU5ESXhOVE15T0RVMk16VXdMekV5TURCWGVERXlNREJJWDI1MWJHd3wxMDYxYTUwZTQzZmY3ZTgzZDQxMzk4ODI5NWRjNTMzNGQ1YTUyMTU5MjQxMTUwOWI3ZWFkZmI4MWE0YzljNTRl"
       ],
-      "imageAlt": "jfajdn"
+      "imageAlt": "Boat nirvana"
     },
     {
-      "id": 6,
-      "title": "glkankj",
-      "price": "knakjno",
-      "color": "namnlk",
+      "id": "611",
+      "title": "Boat Nirvana",
+      "price": "1499",
+      "color": "Black",
       "images": [
-        "nknjk"
+        "https://www.luluhypermarket.in/medias/1200Wx1200H-null?context=bWFzdGVyfGltYWdlc3w5NDk0M3xpbWFnZS9qcGVnfGFHVTBMMmhqTkM4NU5ESXhOVE15T0RVMk16VXdMekV5TURCWGVERXlNREJJWDI1MWJHd3wxMDYxYTUwZTQzZmY3ZTgzZDQxMzk4ODI5NWRjNTMzNGQ1YTUyMTU5MjQxMTUwOWI3ZWFkZmI4MWE0YzljNTRl"
       ],
-      "imageAlt": "glkankj"
+      "imageAlt": "Boat Nirvana"
     }
   ]
 }

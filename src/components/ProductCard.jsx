@@ -18,7 +18,7 @@ function ProductCard({ product }) {
     if (updatedName.length < 1) {
       alert("Please enter a valid name");
     }
-    updateProduct({
+    await updateProduct({
       id: product.id,
       body: { ...product, title: updatedName },
     });
@@ -42,7 +42,7 @@ function ProductCard({ product }) {
                   {product.title}
                 </a>
               </h3>
-              <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+              <p className="mt-1 text-sm font-semibold text-gray-500">{product.color}</p>
             </div>
             <p className="text-sm font-medium text-gray-900">{product.price}</p>
           </div>
@@ -50,21 +50,21 @@ function ProductCard({ product }) {
         <div>
           <input
             type="text"
-            className="border border-black p-2"
+            className="border border-black p-2 w-full"
             value={updatedName}
             onChange={(e) => setUpdatedName(e.target.value)}
             placeholder="Enter product new name"
           />
           <button
             onClick={() => handleUpdateProduct(product)}
-            className="text-sm font-semibold bg-green-400 px-2 py-1 rounded-sm text-while-900"
+            className="text-sm w-full font-semibold bg-green-400 px-2 py-1 rounded-sm text-while-900"
           >
             Update name
           </button>
         </div>
       </div>
       <button
-        className="text-sm font-semibold bg-red-400 px-2 py-1 rounded-sm text-while-900"
+        className="text-sm w-full font-semibold bg-red-400 px-2 py-1 rounded-sm text-while-900"
         onClick={() => handleDeleteProduct(product.id)}
       >
         delete
