@@ -12,7 +12,7 @@ function CreateProduct() {
 
   const handleSubmit = () => {
     addProduct({
-      id: products[products.length - 1].id + 1,
+      id: parseInt(products[products.length - 1].id + 1),
       title: title,
       price: price,
       color: color,
