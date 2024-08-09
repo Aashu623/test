@@ -1,11 +1,10 @@
 import React from "react";
 import { useEffect } from "react";
-import { useAddProductMutation, useGetProductsQuery } from "../api/products";
-import { product as item } from "./product";
+import { useGetProductsQuery } from "../api/products";
 import ProductCard from "./ProductCard";
+import CreateProduct from "./CreateProduct.jsx";
 function Products() {
   const { data: products, error } = useGetProductsQuery();
-  const [addProduct] = useAddProductMutation();
 
   useEffect(() => {
     if (error) {
@@ -16,10 +15,12 @@ function Products() {
     <>
       <div className="container grid grid-cols-5 gap-5 p-10">
         {products &&
-          products.map((product) => <ProductCard product={product} />)}
+          products.map((product) => (
+            <ProductCard product={product} key={product.id} />
+          ))}
       </div>
 
-      <button onClick={() => addProduct(item)}>Add</button>
+      <CreateProduct />
     </>
   );
 }

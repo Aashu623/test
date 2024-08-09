@@ -11,6 +11,7 @@ function ProductCard({ product }) {
   const [deleteProduct] = useDeleteProductMutation();
 
   const handleDeleteProduct = async (id) => {
+    console.log(id);
     await deleteProduct(id);
   };
   const handleUpdateProduct = async (product) => {
